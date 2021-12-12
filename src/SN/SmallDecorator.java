@@ -8,10 +8,10 @@ public class SmallDecorator extends TagDecorator {
 		this.tag = tag;
 	}
 	
-	public String getOpeningTag() {
+	protected String getOpeningTag() {
 		return "<small>" + tag.getOpeningTag();
 	}
-	public String getClosingTag() {
+	protected String getClosingTag() {
 		return tag.getClosingTag() + "</small>";
 	}
 	

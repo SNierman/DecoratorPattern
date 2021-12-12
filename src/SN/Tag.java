@@ -13,8 +13,8 @@ public abstract class Tag {
 	 */
 	
 	
-	public abstract String getOpeningTag();	
-	public abstract String getClosingTag();
+	protected abstract String getOpeningTag();	
+	protected abstract String getClosingTag();
 	public abstract String getTag();
 
 }

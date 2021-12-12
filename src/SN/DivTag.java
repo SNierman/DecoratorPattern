@@ -2,16 +2,33 @@ package SN;
 
 public class DivTag extends Tag {
 
-	private String name = null;
-	private String id = null;
+	private Name name = null;
+	private Id id = null;
 	
-	public String getOpeningTag() {
+	public DivTag() {
+		
+	}
+	
+	public DivTag(Name name) {
+		this.name = name;
+	}
+	
+	public DivTag(Id id) {
+		this.id = id;
+	}
+	
+	public DivTag(Name name, Id id) {
+		this.name = name;
+		this.id = id;
+	}
+	
+	protected String getOpeningTag() {
 		String tag = name == null ? "<div" : "<div name = " + name; 
 		tag = id == null ? tag : tag + " id = " + id;
 		return tag + ">";
 	}
 	
-	public String getClosingTag() {
+	protected String getClosingTag() {
 		return "</div>";
 	}
 	
@@ -19,11 +36,4 @@ public class DivTag extends Tag {
 		return getOpeningTag() + getClosingTag();
 	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void setID(String id) {
-		this.id = id;
-	}
 }

@@ -10,11 +10,11 @@ public class ADecorator extends TagDecorator {
 		this.href = href;
 	}
 	
-	public String getOpeningTag() {
+	protected String getOpeningTag() {
 		return "<a href=\"" + href + "\">" + tag.getOpeningTag() ;
 	}
 	
-	public String getClosingTag() {
+	protected String getClosingTag() {
 		return tag.getClosingTag() + "</a>";
 	}
 	

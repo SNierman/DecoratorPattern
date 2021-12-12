@@ -13,7 +13,6 @@ public class HTMLMain {
 
 		Tag tag2 = new HTag(2);
 		System.out.println(tag2.getTag());
-		((HTag) tag2).setName("inTag");
 		System.out.println(tag2.getTag());
 		tag2 = new ADecorator(tag2, "www.touroone.edu");
 		System.out.println(tag2.getTag());

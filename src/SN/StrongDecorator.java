@@ -8,10 +8,10 @@ public class StrongDecorator extends TagDecorator {
 		this.tag = tag;
 	}
 	
-	public String getOpeningTag() {
+	protected String getOpeningTag() {
 		return "<strong>" + tag.getOpeningTag();
 	}
-	public String getClosingTag() {
+	protected String getClosingTag() {
 		return tag.getClosingTag() + "</strong>";
 	}
 	public String getTag() {
