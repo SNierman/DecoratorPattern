@@ -2,7 +2,7 @@ package SN;
 
 public class IDecorator extends TagDecorator {
 
-	Tag tag;
+	private Tag tag;
 
 	public IDecorator(Tag tag) {
 		this.tag = tag;

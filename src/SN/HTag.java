@@ -3,9 +3,9 @@ package SN;
 public class HTag extends Tag {
 
 	// if hSize is not set, or is set invalidly, its default is 1
-	int hSize = 1;
-	Name name = null;
-	Id id = null;
+	private int hSize = 1;
+	private Name name = null;
+	private Id id = null;
 	
 	public HTag(int hSize) {
 		this.hSize = hSizeValidator(hSize);

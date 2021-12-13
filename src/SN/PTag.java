@@ -2,8 +2,8 @@ package SN;
 
 public class PTag extends Tag {
 
-	Name name = null;
-	Id id = null;
+	private Name name = null;
+	private Id id = null;
 	
 	public PTag() {
 		

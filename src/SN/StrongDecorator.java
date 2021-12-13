@@ -2,7 +2,7 @@ package SN;
 
 public class StrongDecorator extends TagDecorator {
 
-	Tag tag;
+	private Tag tag;
 
 	public StrongDecorator(Tag tag) {
 		this.tag = tag;

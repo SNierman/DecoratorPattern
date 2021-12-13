@@ -8,11 +8,11 @@ public abstract class Tag {
 	 * 		how would I do that?
 	 * 		do all fields have to be protected?
 	 * 
-	 * 		abstract out methods, concatenate
-	 * 		should the name and id methods be in the parent class if the decorators can't use them?
 	 */
 	
-	
+	// opening and closing tags are protected because you will never need them
+	// outside the class because they are always concatenated before being used
+	// since they are always used together
 	protected abstract String getOpeningTag();	
 	protected abstract String getClosingTag();
 	public abstract String getTag();

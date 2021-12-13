@@ -2,11 +2,11 @@ package SN;
 
 public class InputTag extends Tag {
 
-	InputType type = new InputType("");
-	InputEvent event = new InputEvent("", "");
-	InputValue value = new InputValue("");
-	Name name = null;
-	Id id = null;
+	private InputType type = new InputType("");
+	private InputEvent event = new InputEvent("", "");
+	private InputValue value = new InputValue("");
+	private Name name = null;
+	private Id id = null;
 
 	public InputTag() {
 

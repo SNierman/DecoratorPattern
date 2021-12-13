@@ -2,6 +2,8 @@ package SN;
 
 public class DivTag extends Tag {
 
+	// Name and id had to be separate objects so that the user
+	// can choose to have one and not the other
 	private Name name = null;
 	private Id id = null;
 	

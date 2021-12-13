@@ -2,8 +2,8 @@ package SN;
 
 public class ADecorator extends TagDecorator {
 
-	Tag tag;
-	String href;
+	private Tag tag;
+	private String href;
 	
 	public ADecorator(Tag tag, String href) {
 		this.tag = tag;
