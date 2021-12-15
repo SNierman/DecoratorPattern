@@ -1,31 +1,27 @@
 package SN;
 
 public class PTag extends Tag {
-
-	private Name name = null;
-	private Id id = null;
 	
 	public PTag() {
-		
+		super();
 	}
 	
 	public PTag(Name name) {
-		this.name = name;
+		super(name);
 	}
 	
 	public PTag(Id id) {
-		this.id = id;
+		super(id);
 	}
 	
 	public PTag(Name name, Id id) {
-		this.name = name;
-		this.id = id;
+		super(name, id);
 	}
 	
 	protected String getOpeningTag() {
 		String tag = "<p";
-		tag = name == null ? tag : tag + " name = " + name;
-		tag = id == null ? tag : tag + " id = " + id;
+		tag = name == null ? tag : tag + " name=\"" + name.getName() + "\"";
+		tag = id == null ? tag : tag + " id=\"" + id.getId() + "\"";
 		return tag + ">";
 	}
 	

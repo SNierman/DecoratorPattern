@@ -3,152 +3,151 @@ package SN;
 public class InputTag extends Tag {
 
 	private InputType type = new InputType("");
-	private InputEvent event = new InputEvent("", "");
+	private InputEvent event = new InputEvent(null, "");
 	private InputValue value = new InputValue("");
-	private Name name = null;
-	private Id id = null;
 
 	public InputTag() {
-
+		super();
 	}
 
 	public InputTag(Name name) {
-		this.name = name;
+		super(name);
 	}
 
 	public InputTag(Id id) {
-		this.id = id;
+		super(id);
 	}
 
 	public InputTag(Name name, Id id) {
-		this.name = name;
-		this.id = id;
+		super(name, id);
 	}
 
 	public InputTag(InputType type) {
+		super();
 		this.type = type;
 	}
 
 	public InputTag(InputType type, Name name) {
+		super(name);
 		this.type = type;
-		this.name = name;
 	}
 
 	public InputTag(InputType type, Id id) {
+		super(id);
 		this.type = type;
-		this.id = id;
 	}
 
 	public InputTag(InputType type, Name name, Id id) {
+		super(name, id);
 		this.type = type;
-		this.name = name;
-		this.id = id;
 	}
 	
 	public InputTag(InputType type, InputValue value) {
+		super();
 		this.type = type;
 		this.value = value;
 	}
 	
 	public InputTag(InputType type, InputValue value, Name name) {
+		super(name);
 		this.type = type;
 		this.value = value;
-		this.name = name;
 	}
 	
 	public InputTag(InputType type, InputValue value, Id id) {
+		super(id);
 		this.type = type;
 		this.value = value;
-		this.id = id;
 	}
 	
 	public InputTag(InputType type, InputValue value, Name name, Id id) {
+		super(name, id);
 		this.type = type;
 		this.value = value;
-		this.name = name;
-		this.id = id;
 	}
 
 	public InputTag(InputType type, InputEvent event) {
+		super();
 		this.type = type;
 		this.event = event;
 	}
 	
 	public InputTag(InputType type, InputEvent event, Name name) {
+		super(name);
 		this.type = type;
 		this.event = event;
-		this.name = name;
 	}
 	
 	public InputTag(InputType type, InputEvent event, Id id) {
+		super(id);
 		this.type = type;
 		this.event = event;
-		this.id = id;
 	}
 	
 	public InputTag(InputType type, InputEvent event, Name name, Id id) {
+		super(name, id);
 		this.type = type;
 		this.event = event;
-		this.name = name;
-		this.id = id;
 	}
 	
 	public InputTag(InputEvent event, InputValue value) {
+		super();
 		this.event = event;
 		this.value = value;
-	}
-
-	public InputTag(InputEvent event, InputValue value, Id id) {
-		this.event = event;
-		this.value = value;
-		this.id = id;
-	}
-
-	public InputTag(InputEvent event, InputValue value, Name name, Id id) {
-		this.event = event;
-		this.value = value;
-		this.name = name;
-		this.id = id;
 	}
 
 	public InputTag(InputEvent event, InputValue value, Name name) {
+		super(name);
 		this.event = event;
 		this.value = value;
-		this.name = name;
+	}
+	
+	public InputTag(InputEvent event, InputValue value, Id id) {
+		super(id);
+		this.event = event;
+		this.value = value;
 	}
 
+	public InputTag(InputEvent event, InputValue value, Name name, Id id) {
+		super(name, id);
+		this.event = event;
+		this.value = value;
+	}
+
+	
+
 	public InputTag(InputType type, InputEvent event, InputValue value) {
+		super();
 		this.type = type;
 		this.event = event;
 		this.value = value;
 	}
 	
 	public InputTag(InputType type, InputEvent event, InputValue value, Name name) {
+		super(name);
 		this.type = type;
 		this.event = event;
 		this.value = value;
-		this.name = name;
 	}
 	
 	public InputTag(InputType type, InputEvent event, InputValue value, Id id) {
+		super(id);
 		this.type = type;
 		this.event = event;
 		this.value = value;
-		this.id = id;
 	}
 	
 	public InputTag(InputType type, InputEvent event, InputValue value, Name name, Id id) {
+		super(name, id);
 		this.type = type;
 		this.event = event;
 		this.value = value;
-		this.name = name;
-		this.id = id;
 	}
 
 	protected String getOpeningTag() {
 		String tag = "<input " + type.getInputType() + event.getInputEvent() + value.getInputValue();
-		tag = name == null ? tag : tag + " name = " + this.name;
-		tag = id == null ? tag : tag + " id = " + id;
+		tag = name == null ? tag : tag + " name=\"" + name.getName() + "\"";
+		tag = id == null ? tag : tag + " id=\"" + id.getId() + "\"";
 		return tag + ">";
 	}
 

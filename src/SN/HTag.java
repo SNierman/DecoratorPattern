@@ -4,28 +4,28 @@ public class HTag extends Tag {
 
 	// if hSize is not set, or is set invalidly, its default is 1
 	private int hSize = 1;
-	private Name name = null;
-	private Id id = null;
 	
 	public HTag(int hSize) {
+		super();
 		this.hSize = hSizeValidator(hSize);
 	}
 	
 	public HTag(int hSize, Name name) {
+		super(name);
 		this.hSize = hSizeValidator(hSize);
-		this.name = name;		
 	}
 
 	public HTag(int hSize, Id id) {
+		super(id);
 		this.hSize = hSizeValidator(hSize);
-		this.id = id;
 	}
 	
 	public HTag(int hSize, Name name, Id id) {
+		super(name, id);
 		this.hSize = hSizeValidator(hSize);
-		this.name = name;
-		this.id = id;
 	}
+	
+	// Make sure that the size is a valid size, if not, size will be 1
 	private int hSizeValidator(int hSize) {
 		if (hSize >=1 && hSize <= 6) {
 			return hSize;
@@ -33,8 +33,9 @@ public class HTag extends Tag {
 		return 1;
 	}
 	protected String getOpeningTag() {
-		String tag = name == null ? "<h" + hSize : "<div name = " + name; 
-		tag = id == null ? tag : tag + " id = " + id;
+		String tag = "<h" + hSize;
+		tag = name == null ? tag : tag + " name=\"" + name.getName() + "\""; 
+		tag = id == null ? tag : tag + " id=\"" + id.getId() + "\"";
 		return tag + ">";
 	}
 	

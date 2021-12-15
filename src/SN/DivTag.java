@@ -1,32 +1,28 @@
 package SN;
 
 public class DivTag extends Tag {
-
-	// Name and id had to be separate objects so that the user
-	// can choose to have one and not the other
-	private Name name = null;
-	private Id id = null;
 	
 	public DivTag() {
-		
+		super();
 	}
 	
 	public DivTag(Name name) {
-		this.name = name;
+		super(name);
 	}
 	
 	public DivTag(Id id) {
-		this.id = id;
+		super(id);
 	}
 	
 	public DivTag(Name name, Id id) {
-		this.name = name;
-		this.id = id;
+		super(name, id);
 	}
 	
+	
 	protected String getOpeningTag() {
-		String tag = name == null ? "<div" : "<div name = " + name; 
-		tag = id == null ? tag : tag + " id = " + id;
+		String tag = "<div";
+		tag = name == null ? tag : tag + " name=\"" + name.getName() + "\""; 
+		tag = id == null ? tag : tag + " id=\"" + id.getId() + "\"";
 		return tag + ">";
 	}
 	
